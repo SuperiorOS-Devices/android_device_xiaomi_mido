@@ -67,6 +67,19 @@ if [ -s "$MY_DIR"/proprietary-files.txt ]; then
 
     extract "$MY_DIR"/proprietary-files.txt "$SRC" "$SECTION"
 
+BLOB_ROOT="${AOSP_ROOT}"/vendor/"${VENDOR}"/"${DEVICE}"/proprietary
+
+sed -i \
+	's/\/system\/etc\//\/vendor\/etc\//g' \
+	"${BLOB_ROOT}/vendor/lib/libmmcamera2_sensor_modules.so"
+
+sed -i \
+	"s|/data/misc/camera/cam_socket|/data/vendor/qcam/cam_socket|g" \
+	"${BLOB_ROOT}/vendor/bin/mm-qcamera-daemon"
+
+patchelf --remove-needed vendor.xiaomi.hardware.mtdservice@1.0.so "${BLOB_ROOT}/vendor/bin/mlipayd"
+patchelf --remove-needed vendor.xiaomi.hardware.mtdservice@1.0.so "${BLOB_ROOT}/vendor/lib64/libmlipay.so"
+
     DEVICE_BLOB_ROOT="$LINEAGE_ROOT"/vendor/"$VENDOR"/"$DEVICE"/proprietary
 
     sed -i \
