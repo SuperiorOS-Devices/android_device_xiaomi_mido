@@ -87,6 +87,14 @@ vendor.display.enable_default_color_mode=1 \
 vendor.display.disable_skip_validate=1 \
 vendor.gralloc.enable_fb_ubwc=1
 
+# Dex2oat limits
+PRODUCT_PROPERTY_OVERRIDES += \
+dalvik.vm.boot-dex2oat-threads=4 \
+dalvik.vm.dex2oat-threads=2 \
+dalvik.vm.image-dex2oat-threads=4 \
+dalvik.vm.dex2oat-filter=everything \
+dalvik.vm.image-dex2oat-filter=everything
+
 # DRM
 PRODUCT_PROPERTY_OVERRIDES += \
 drm.service.enabled=true
