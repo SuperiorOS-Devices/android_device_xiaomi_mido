@@ -598,6 +598,13 @@ etc/camera/s5k5e8_sunny_chromatix.xml:vendor/etc/camera/s5k5e8_sunny_chromatix.x
 vendor/etc/diracmobile.config
 lib/libDiracAPI_SHARED.so:vendor/lib/libDiracAPI_SHARED.so
 lib/soundfx/libdirac.so:vendor/lib/soundfx/libdirac.so
+lib/soundfx/libdirac.so
+lib/libDiracAPI_SHARED.so
+vendor/etc/diracvdd.bin
+vendor/etc/drc/drc_cfg_5.1.txt
+vendor/etc/drc/drc_cfg_AZ.txt
+vendor/etc/surround_sound_3mic/surround_sound_rec_5.1.cfg
+vendor/etc/surround_sound_3mic/surround_sound_rec_AZ.cfg
 
 # Display calibration
 etc/qdcm_calib_data_ili9885_boe_fhd_video_mode_dsi_panel.xml:vendor/etc/qdcm_calib_data_ili9885_boe_fhd_video_mode_dsi_panel.xml
